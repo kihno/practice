@@ -1,0 +1,13 @@
+#dropdown {
+    width: 15em;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.item {
+    display: none;
+}
+
+.item:hover {
+    background-color: lightgrey;
+}

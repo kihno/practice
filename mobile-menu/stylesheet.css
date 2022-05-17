@@ -1,0 +1,36 @@
+#navBar {
+    display: flex;
+    position: relative;
+}
+
+#primary {
+    flex-grow: 2;
+    display: flex;
+    justify-content: start;
+    padding: 0;
+}
+
+#logo>img {
+    height: 70px;
+}
+
+li {
+    border: 1px solid black;
+    list-style: none;
+    flex-grow: 1;
+    font-weight: bold;
+}
+
+#secondary {
+    position: absolute;
+    top: 100%;
+    right: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.hidden {
+    visibility: hidden;
+}
