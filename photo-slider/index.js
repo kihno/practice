@@ -1,6 +1,7 @@
 const imageSlider = (() => {
     const slides = document.querySelectorAll('.image');
     const dotContainer = document.getElementById('dotContainer');
+    const pause = document.getElementById('pause');
     const prev = document.getElementById('prev');
     const next = document.getElementById('next');
 
@@ -19,6 +20,7 @@ const imageSlider = (() => {
     const dots = document.querySelectorAll('.dot');
 
     let slideIndex = 1;
+    let timer;
     autoSlide(slideIndex);
 
     prev.addEventListener('click', () => {
@@ -27,6 +29,7 @@ const imageSlider = (() => {
     next.addEventListener('click', () => {
         slide(1);
     });
+    pause.addEventListener('click', toggleTimer)
 
     function slide(n) {
         showSlide(slideIndex += n);
@@ -62,7 +65,17 @@ const imageSlider = (() => {
     function autoSlide() {
         slideIndex++;
         showSlide(slideIndex);
-        setTimeout(autoSlide, 3000);
+        timer = setTimeout(autoSlide, 3000);
+    }
+
+    function toggleTimer() {
+        if (pause.classList.contains('paused')) {
+            pause.classList.remove('paused');
+            timer = setTimeout(autoSlide, 3000);
+        } else {
+            clearTimeout(timer);
+            pause.classList.add('paused');
+        }
     }
 
 })();
