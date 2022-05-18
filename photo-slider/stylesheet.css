@@ -1,3 +1,55 @@
+#container {
+    height: 80vh;
+}
+
 .image {
     display: none;
+    height: 100%;
+}
+
+img {
+    height: 100%;
+}
+
+#prev, #next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    font-weight: bold;
+    font-size: 50px;
+    color: black;
+    opacity: 0.5;
+}
+
+#prev:hover, #next:hover {
+    opacity: 1;
+}
+
+#next {
+    right: 0;
+}
+
+#dotContainer {
+    display: flex;
+    gap: 20px;
+    left: 50%;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.dot {
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: black;
+    opacity: 0.5;
+}
+
+.dot:hover {
+    opacity: 1;
+}
+
+.active {
+    opacity: 1;
 }
